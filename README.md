@@ -23,7 +23,7 @@ system monitoring.
 ## Prerequisites
 
   * You need a hypervizor type 2 (VirtualBox) to create your Debian VM. [VirtualBox Download Link](https://www.virtualbox.org//wiki/Downloads)  
-  * - Install your Debian OS as '.iso' file. [Debian OS Download Link] (https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/)
+  * - Install your Debian OS as ".iso" file. [Debian OS Download Link] (https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/)
     - Scroll to the bottom of the website and click debian-xx.x.x-amd64-netinst.iso
   * Partition your Debian VM and set it up as told by the subject guidelines.
 
