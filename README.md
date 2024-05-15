@@ -89,8 +89,8 @@ system monitoring.
       -  Type: sudo nano /etc/sudoers to go the sudoers file
       -  Edit your sudoers file to look like the following by adding in all of the defaults in the text below:
     
-          ╔════════════════════════════════════════════════════════════════════════════╗
-          ║ Defaults	env_reset                                                        ║
+          ╔══════════════════════════════════════════════════════════════════════════════╗
+          ║ Defaults	env_reset							 ║
           ║ Defaults	mail_badpass                                                     ║
           ║ Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin:/bin" ║
           ║ Defaults	badpass_message="Password is wrong, please try again!"           ║
@@ -98,7 +98,7 @@ system monitoring.
           ║ Defaults	logfile="/var/log/sudo/sudo.log"                                 ║
           ║ Defaults	log_input, log_output                                            ║
           ║ Defaults	requiretty                                                       ║
-          ╚════════════════════════════════════════════════════════════════════════════╝
+          ╚══════════════════════════════════════════════════════════════════════════════╝
          
   *   Crontab Configuation:
       -  Type: apt-get install -y net-tools to install the netstat tools
