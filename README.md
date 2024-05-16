@@ -382,6 +382,85 @@ system monitoring.
 
     - In host browser, connect to http://127.0.0.1:8080 and finish WordPress installation.
 
+  * Postfix Service:
+    
+     - Postfix definition:
+       
+       ```
+       Postfix is a free and open-source Mail Transfer Agent (MTA).
+       In simpler terms, it's the software onyour server that handles
+       the routing and delivery of emails.
+       
+       Here's a breakdown of what an MTA does:
+       
+       	-> Receives Incoming Emails: When someone sends an email to an address
+       on your domain (e.g., [email address removed]), Postfix receives that email.
+       
+       	-> Routes Emails: Postfix figures out where to send the email based on
+       the recipient's address. It might deliver the email directly to a mailbox on
+       your server, or it might send it on to another server.
+       
+       	-> Delivers Emails: Postfix uses protocols like SMTP (Simple Mail Transfer Protocol)
+       to send emails to their final destination.
+
+       ```
+      - Postfix advantages:
+        ```
+        Postfix is known for being:
+        
+        	->Fast and Efficient: It can handle large volumes of email traffic efficiently.
+        
+        	->Secure: It incorporates security features to protect your server from spam and
+        other threats.
+        
+        	-> Easy to Administer: It's known for being relatively easy to set up and manage
+        compared to some other MTAs.
+        
+        So, if you want your Debian VM to send and receive emails, installing Postfix
+        is a great option!
+        ```
+      - Postfix installation steps:
+      - Update and Install Packages:
+      - Type: ```$ sudo apt update```
+      - Install Postfix and the mailutils package
+        ```
+        sudo apt install postfix mailutils
+        ```
+
+      - Postfix Configuration:
+      - During installation, Postfix will prompt you with configuration options. Here's what to choose:
+        Visit and follow this video tuorial steps on configuring and testing postfix service on Debian VM [link](https://www.youtube.com/watch?v=oRxk8KWlNRc&t=4s)
+    
+       - Editing main.cf (Optional):
+         While the basic configuration is done, you might want to edit the main Postfix configuration
+         file /etc/postfix/main.cf for further customization.
+         
+       - Type: ```$ sudo nano /etc/postfix/main.cf```
+       - Common customizations in main.cf include:
+         
+         	/*/ Relay restrictions: Define which networks are allowed to send emails through your server.
+
+         	/*/ Mailbox location: Specify where incoming emails are stored.
+
+         	/*/ Alias settings: Create email aliases for forwarding.
+    
+       - Restart Postfix:
+         ```
+         $ sudo systemctl restart postfix
+         ```
+       
+       - Once you've made any edits (or left it as is), save the main.cf file and restart Postfix for the changes to take effect
+       - Type: $ sudo systemctl restart postfix
+
+    * Testing:
+       - You can test your Postfix setup by sending a test email. Here's an example using the mail command:
+         ```echo "This is a test email" | mail -s "Postfix Test" root```
+
+       - This sends an email with the subject "Postfix Test" to the root user on your VM.  Check the root user's mailbox
+          to see if the email arrived.
+
+
+
 ## Contributing
 
 If you would like to contribute to this repository by adding new solutions or improving existing ones, please follow these steps:
